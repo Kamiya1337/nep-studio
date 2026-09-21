@@ -1,0 +1,276 @@
+import { ContextOption, VibeOption, ColorPalette, NepLook, CultureGuardPoint } from '../types';
+
+export const CONTEXT_OPTIONS: ContextOption[] = [
+  {
+    id: 'tet-o-truong',
+    number: '01',
+    title: 'Tết ở trường',
+    subtitle: 'Không khí thanh xuân & truyền thống',
+    description: 'Rộn ràng sắc xuân học đường, giao hòa nét truyền thống đoan trang cùng nhịp sống trẻ.',
+  },
+  {
+    id: 'le-hoi',
+    number: '02',
+    title: 'Lễ hội',
+    subtitle: 'Hội hè đầu năm & ngày văn hóa',
+    description: 'Hội hè mùa xuân, lễ tế truyền thống, ngày hội văn hóa cộng đồng trang trọng và khoan thai.',
+  },
+  {
+    id: 'su-kien-van-hoa',
+    number: '03',
+    title: 'Sự kiện văn hóa',
+    subtitle: 'Triển lãm & tọa đàm di sản',
+    description: 'Không gian triển lãm nghệ thuật, tọa đàm nghiên cứu di sản và giao lưu văn hóa đương đại.',
+  },
+  {
+    id: 'tham-di-tich',
+    number: '04',
+    title: 'Thăm di tích',
+    subtitle: 'Chiêm bái lăng tẩm & đền đài cổ',
+    description: 'Chốn tôn nghiêm thanh tịnh, đền miếu, hoàng thành cổ kính lắng đọng chiều sâu thời gian.',
+  },
+  {
+    id: 'chup-anh-ky-yeu',
+    number: '05',
+    title: 'Chụp ảnh / Kỷ yếu',
+    subtitle: 'Lưu giữ khoảnh khắc thanh xuân',
+    description: 'Bộ ảnh kỷ niệm thanh xuân trang nhã, tôn trọn vóc dáng và thần thái tự tại trong trang phục dân tộc.',
+  },
+];
+
+export const VIBE_OPTIONS: VibeOption[] = [
+  {
+    id: 'minimal',
+    title: 'Minimal',
+    essence: 'Tiết chế phom dáng & chất liệu mộc',
+    description: 'Lược giản tối đa chi tiết, tập trung tuyệt đối vào đường nét kỷ hà chuẩn mực và độ rủ mộc mạc của lụa tơ tằm.',
+  },
+  {
+    id: 'thanh-nha',
+    title: 'Thanh nhã',
+    essence: 'Nhẹ nhàng, thoát tục & khoan thai',
+    description: 'Khí chất ung dung, sắc độ dịu mát và đường may mực thước, tỏa ra nét thanh tao giữa chốn đông người.',
+  },
+  {
+    id: 'hoai-co',
+    title: 'Hoài cổ',
+    essence: 'Trầm mặc phong vị cung đình xưa',
+    description: 'Tái hiện vẹn nguyên sắc thái trang nghiêm, bảng màu trầm sâu và nếp gấp đoan chính của cổ phục hoàng triều.',
+  },
+  {
+    id: 'ca-tinh',
+    title: 'Cá tính',
+    essence: 'Tuyên ngôn tương phản sắc độ',
+    description: 'Sự kết hợp táo bạo giữa các mảng màu đối lập và phụ kiện ấn tượng nhưng vẫn vững vàng trên cấu trúc Việt phục.',
+  },
+  {
+    id: 'di-san-duong-dai',
+    title: 'Di sản đương đại',
+    essence: 'Hơi thở mới trên cốt cách xưa',
+    description: 'Hòa quyện linh hoạt giữa phom dáng lịch sử với phong cách ứng dụng hiện đại, phóng khoáng và tự tại.',
+  },
+];
+
+export const COLOR_PALETTES: ColorPalette[] = [
+  {
+    id: 'ngoc-thanh',
+    name: 'Ngọc thanh',
+    vietnameseName: 'Sắc ngọc bích & sương mai',
+    description: 'Sắc ngọc bích nhạt, ngọc phỉ thúy mờ, mực lục và sương mai.',
+    swatches: ['#0A3830', '#1D5347', '#7CAE9B', '#D0E6C5'],
+    hexCodes: ['#0A3830', '#1D5347', '#7CAE9B', '#D0E6C5'],
+    meaning: 'Tượng trưng cho sự thanh sạch, phẩm hạnh đoan trang và bình an nội tại.',
+  },
+  {
+    id: 'hong-lien',
+    name: 'Hồng liên',
+    vietnameseName: 'Sắc cánh sen Tây Hồ',
+    description: 'Sắc hồng phấn cánh sen Tây Hồ, thắm nhụy sen, lục diệp và hồng khói.',
+    swatches: ['#85293E', '#B84A62', '#E08594', '#EAD8DB'],
+    hexCodes: ['#85293E', '#B84A62', '#E08594', '#EAD8DB'],
+    meaning: 'Nét duyên dáng thanh tao, tinh thần thoát tục "gần bùn mà chẳng hôi tanh mùi bùn".',
+  },
+  {
+    id: 'mac-luc',
+    name: 'Mặc lục',
+    vietnameseName: 'Sắc rêu phong cổ tự',
+    description: 'Sắc xanh rêu cổ thụ Văn Miếu, chàm thẫm, lá trúc và ngọc tối.',
+    swatches: ['#0E2319', '#1E4232', '#4A755E', '#A8C5B5'],
+    hexCodes: ['#0E2319', '#1E4232', '#4A755E', '#A8C5B5'],
+    meaning: 'Chiều sâu trầm tích của di sản, sự bền bỉ trường tồn qua biến thiên thời cuộc.',
+  },
+  {
+    id: 'lam-suong',
+    name: 'Lam sương',
+    vietnameseName: 'Sắc mây lam xứ Huế',
+    description: 'Sắc lam khói sương giăng xứ Huế, mây lam, ngọc lam thoảng và chàm nhạt.',
+    swatches: ['#1A2F45', '#355374', '#7B9EB8', '#D2E1ED'],
+    hexCodes: ['#1A2F45', '#355374', '#7B9EB8', '#D2E1ED'],
+    meaning: 'Vẻ thâm trầm, thi vị của sông Hương núi Ngự trong sớm mờ sương khói.',
+  },
+  {
+    id: 'tra-nhat',
+    name: 'Trà nhạt',
+    vietnameseName: 'Sắc trà sen & hoàng cúc',
+    description: 'Sắc hoàng cúc, trà sen ướp mộc, lụa tơ tằm thô và be ấm.',
+    swatches: ['#4E371C', '#8B683B', '#C6A473', '#F1E9DB'],
+    hexCodes: ['#4E371C', '#8B683B', '#C6A473', '#F1E9DB'],
+    meaning: 'Sự ấm áp, mộc mạc và hoài niệm của chén trà xuân giữa hiên đình cổ.',
+  },
+];
+
+export const CULTURE_GUARD_POINTS: CultureGuardPoint[] = [
+  {
+    id: 'co-lap-linh',
+    name: 'Cổ lập lĩnh',
+    title: 'Cổ đứng đoan chính (Stand collar)',
+    description: 'Cổ áo dựng đứng vuông vức ôm vừa khít cổ, đường may tỉ mỉ thể hiện sự mực thước, phong thái tự tôn và lễ nghi chuẩn mực.',
+    significance: 'Đặc trưng bất biến của áo ngũ thân triều Nguyễn từ thời chúa Nguyễn Phúc Khoát.',
+    x: 50,
+    y: 19,
+  },
+  {
+    id: 'vat-ngu-than',
+    name: 'Vạt ngũ thân',
+    title: 'Cấu trúc 5 vạt (5-Panel System)',
+    description: 'Bốn vạt ngoài tượng trưng cho Tứ thân phụ mẫu (cha mẹ ruột và cha mẹ hôn phối), vạt con thứ năm bên trong tượng trưng cho chính người mặc được gia đình chở che.',
+    significance: 'Bài học đạo lý Ngũ luân sâu sắc của người Việt được gửi gắm trên thân áo.',
+    x: 38,
+    y: 48,
+  },
+  {
+    id: 'ngu-khuy',
+    name: 'Ngũ khuy cài',
+    title: 'Năm hạt cúc cài (Five Virtues)',
+    description: 'Năm chiếc khuy cài ngay ngắn bên sườn hữu tượng trưng cho Ngũ thường: Nhân, Lễ, Nghĩa, Trí, Tín - chuẩn mực đạo đức người quân tử.',
+    significance: 'Mỗi lần cài khuy là một lần nhắc nhớ giữ gìn phẩm hạnh và sự khiêm nhường.',
+    x: 58,
+    y: 34,
+  },
+  {
+    id: 'tay-chen',
+    name: 'Tay chẽn mực thước',
+    title: 'Ống tay thu gọn (Fitted Sleeves)',
+    description: 'Ống tay thu dần và ôm gọn nhẹ nhàng nơi cổ tay, vừa giữ được sự trang nhã vừa vô cùng linh hoạt cho sinh hoạt và giao tế lễ hội đương đại.',
+    significance: 'Thích ứng hoàn hảo với nhịp sống năng động mà không làm mất đi dáng vẻ cổ xưa.',
+    x: 78,
+    y: 52,
+  },
+  {
+    id: 'chat-lieu-lua',
+    name: 'Lụa tơ tằm tự nhiên',
+    title: 'Chất liệu lụa truyền thống',
+    description: 'Chất liệu lụa tơ tằm dệt thủ công mộc mạc, tạo nếp rủ mềm mại tự nhiên theo từng bước chân khoan thai.',
+    significance: 'Tôn trọng nguồn nguyên liệu tự nhiên bản địa của các làng nghề dệt truyền thống Việt Nam.',
+    x: 52,
+    y: 75,
+  },
+];
+
+export const NEP_LOOKS: NepLook[] = [
+  {
+    id: 1,
+    code: '01',
+    name: 'Ngọc Thủy Thanh Diệp',
+    garmentType: 'Áo ngũ thân · Phối sắc ngọc thanh',
+    paletteName: 'Ngọc thanh',
+    silhouette: 'Dáng suông tự nhiên · Tay chẽn',
+    whyFits: 'Dáng suông thanh thoát trên nền sắc ngọc bích nhạt, tiết chế hoa văn để tôn trọn nếp lụa nguyên bản, khoan thai giữa không gian lễ hội.',
+    mainGarmentDesc: 'Áo ngũ thân lụa ngọc thanh, vạt cài 5 khuy khiêm nhường thể hiện ngũ thường nhân nghĩa.',
+    paletteDesc: 'Dải 4 sắc độ Ngọc thanh — từ xanh thẫm mực nho đến sắc ngọc nhạt đầu sương.',
+    swatches: ['#0A3830', '#1D5347', '#7CAE9B', '#D0E6C5'],
+    hexCodes: ['#0A3830', '#1D5347', '#7CAE9B', '#D0E6C5'],
+    accessoriesDesc: 'Bội ngọc khắc hoa sen chìm thuôn tròn, hài nhung đen thêu chỉ đồng tâm thủ công từ làng nghề cổ.',
+    badge: 'BỘI NGỌC',
+    historicalPeriod: 'Triều Nguyễn · Thế kỷ 18–19',
+    cultureGuardNote: 'Chuẩn xác 100% phom dáng ngũ thân lập lĩnh, không biến dạng kết cấu truyền thống.',
+  },
+  {
+    id: 2,
+    code: '02',
+    name: 'Nguyệt Dạ Chi Lan',
+    garmentType: 'Áo giao lĩnh · Phối sắc lam sương',
+    paletteName: 'Lam sương',
+    silhouette: 'Cổ chéo kinh điển · Nhẹ nhõm',
+    whyFits: 'Cổ chéo giao lĩnh thanh thoát kết hợp dải lam sương huyền ảo, mang vẻ điềm đạm, tao nhã trong các không gian gặp gỡ trang trọng.',
+    mainGarmentDesc: 'Áo giao lĩnh lụa dệt vân mây, vạt chéo đan cài hài hòa, tôn nét đoan trang mực thước.',
+    paletteDesc: 'Dải 4 sắc độ Lam sương — từ chàm thẫm tĩnh lặng đến ánh lam mờ buổi sớm.',
+    swatches: ['#1A2F45', '#355374', '#7B9EB8', '#D2E1ED'],
+    hexCodes: ['#1A2F45', '#355374', '#7B9EB8', '#D2E1ED'],
+    accessoriesDesc: 'Quạt giấy Dó dát vàng mỏng, hài thêu hoa văn hồi văn truyền thống.',
+    badge: 'QUẠT DÓ',
+    historicalPeriod: 'Thời Lê Trung Hưng – Triều Nguyễn',
+    cultureGuardNote: 'Tỷ lệ vạt chéo giao lĩnh đạt chuẩn phục dựng, giữ trọn nếp giao hòa trời đất.',
+  },
+  {
+    id: 3,
+    code: '03',
+    name: 'Tùng Lam Vọng Cảnh',
+    garmentType: 'Áo tấc thung · Phối sắc mặc lục',
+    paletteName: 'Mặc lục',
+    silhouette: 'Tay thụng trang trọng · Phong vị cung đình',
+    whyFits: 'Tay thụng rộng rãi mang sắc xanh rêu cổ thụ, biểu trưng cho phẩm hạnh vững vàng và chiều sâu văn hóa trầm tích qua thời gian.',
+    mainGarmentDesc: 'Áo tấc ngũ thân thụng tay, chất liệu sa tanh dệt hoa chìm, viền cổ dựng chuẩn mực.',
+    paletteDesc: 'Dải 4 sắc độ Mặc lục — từ mực thẫm rêu phong đến sắc lá non thanh khiết.',
+    swatches: ['#0E2319', '#1E4232', '#4A755E', '#A8C5B5'],
+    hexCodes: ['#0E2319', '#1E4232', '#4A755E', '#A8C5B5'],
+    accessoriesDesc: 'Khăn đóng lụa đen 7 vòng, túi gấm thêu linh thú chầu mây.',
+    badge: 'KHĂN ĐÓNG',
+    historicalPeriod: 'Triều Nguyễn · Lễ phục truyền thống',
+    cultureGuardNote: 'Kích thước tay thụng chuẩn tỷ lệ tấc triều đình, uy nghi mà mực thước.',
+  },
+];
+
+export const CULTURAL_STORY = {
+  headerTag: 'CÂU CHUYỆN VĂN HÓA',
+  title: '30 giây hiểu bộ đồ này',
+  subtitle: 'Một thoáng nhìn sâu vào chiều kích lịch sử và tinh thần thẩm mỹ đằng sau từng đường kim, thớ vải.',
+  sections: [
+    {
+      number: '01',
+      tag: 'NGUỒN CỘI',
+      subtag: 'LỊCH SỬ KHẢO CỨU',
+      heading: 'Bản nguyên lịch sử',
+      content:
+        'Áo ngũ thân lập lĩnh ra đời dưới triều chúa Nguyễn Phúc Khoát vào thế kỷ 18 và được hoàn thiện dưới thời vua Minh Mạng, trở thành quốc phục chính thống định hình vẻ ngoài chuẩn mực của người Việt qua nhiều thời kỳ thăng trầm.',
+      visualLabel: 'ĐIỂN CHẾ TRIỀU ĐÌNH',
+    },
+    {
+      number: '02',
+      tag: 'BIỂU TƯỢNG',
+      subtag: 'TẬP TỤC & PHONG VỊ',
+      heading: 'Ý niệm phong vị & Điển chế',
+      content:
+        'Năm vạt áo tượng trưng cho tứ thân phụ mẫu ôm bọc lấy con cái (ngũ luân: nhân, lễ, nghĩa, trí, tín). Năm chiếc khuy cài biểu đạt sự trọn vẹn, nhắc nhở người mặc về cốt cách khiêm nhường, mực thước mỗi khi xuất hiện nơi chốn đông người.',
+      visualLabel: 'KHÍ CHẤT THANH NHÃ',
+    },
+    {
+      number: '03',
+      tag: 'THỜI NAY',
+      subtag: 'GỢI Ý PHỐI GU',
+      heading: 'Biến tấu đương đại',
+      content:
+        'Khi đưa vào không gian lễ hội ngày nay, phối thức “Ngọc Thủy Thanh Diệp” lược bớt các lớp áo lót rườm rà, chọn sắc ngọc thanh thoát nhằm mang lại cảm giác phóng khoáng, dễ thở cho người trẻ nhưng vẫn giữ trọn nếp lụa ung dung.',
+      visualLabel: 'DUNG HÒA THỜI ĐẠI',
+    },
+  ],
+  nepAestheticPrinciple:
+    'Lược giản tầng lớp phục sức để thích ứng khí hậu hiện đại, tuyệt nhiên không biến dạng phom dáng lập lĩnh và vạt ngũ thân đặc trưng.',
+  sources: [
+    {
+      title: '“Ngàn năm áo mũ”',
+      author: 'Trần Quang Đức',
+      publisher: 'Nhà xuất bản Thế Giới',
+    },
+    {
+      title: 'Khảo cứu trang phục triều Nguyễn',
+      author: 'Trung tâm Bảo tồn Di tích Cố đô Huế',
+      publisher: '',
+    },
+    {
+      title: 'Tư liệu hình ảnh & hiện vật phục dựng',
+      author: 'Không gian Văn hóa Cổ phục Việt Nam',
+      publisher: '',
+    },
+  ],
+};
