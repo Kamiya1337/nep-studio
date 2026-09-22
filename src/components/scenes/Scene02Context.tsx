@@ -2,8 +2,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { CONTEXT_OPTIONS } from '../../data/nepData';
 import { VietnamesePavilion } from '../assets/Pavilion';
-import { LotusSingle, LotusLeaf } from '../assets/Lotus';
-import { CloudLine } from '../assets/Atmosphere';
 import { ArrowRight, Check } from 'lucide-react';
 
 interface Scene02ContextProps {
@@ -104,35 +102,22 @@ export const Scene02Context: React.FC<Scene02ContextProps> = ({
           </div>
         </div>
 
-        {/* Right Column: Architectural Pavilion & Perched Crane (5 cols) */}
+        {/* Right Column: Architectural Pavilion (5 cols) */}
         <div className="lg:col-span-5 relative flex flex-col items-center justify-center pt-8 lg:pt-0">
-          {/* Auspicious background clouds */}
-          <div className="absolute -top-4 right-10 opacity-40 pointer-events-none">
-            <CloudLine size={160} type="curl" />
-          </div>
-          <div className="absolute top-1/2 -left-8 opacity-30 pointer-events-none">
-            <CloudLine size={130} type="horizontal" />
-          </div>
-
-          {/* Pavilion with Perched Crane */}
+          {/* Pavilion with high-res watercolor artwork */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative z-10"
+            className="relative z-10 w-full flex flex-col items-center"
           >
-            <VietnamesePavilion size={360} showCrane={true} />
-          </motion.div>
-
-          {/* Foreground Lotus Accent */}
-          <div className="absolute -bottom-4 right-6 z-20 pointer-events-none">
-            <div className="relative">
-              <LotusLeaf size={100} />
-              <div className="absolute -top-6 left-6">
-                <LotusSingle size={72} />
-              </div>
+            <VietnamesePavilion size={420} showCrane={false} />
+            <div className="mt-4 text-center">
+              <span className="text-xs font-mono tracking-widest text-[#5C756B] uppercase">
+                Đình làng cổ truyền · Không gian lễ nghi trang trọng
+              </span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

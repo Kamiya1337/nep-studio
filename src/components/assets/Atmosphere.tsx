@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import inkWashImg from './images/ink-wash-horizontal.png';
+import inkBloomImg from './images/ink-bloom.png';
 
 export const MistLayer: React.FC<{ className?: string; speed?: number; opacity?: number }> = ({
   className = '',
@@ -114,7 +116,18 @@ export const InkWashHorizontal: React.FC<{ className?: string; width?: string }>
   className = '',
   width = '100%',
 }) => {
-  return (
+  const [imgError, setImgError] = React.useState(false);
+
+  return !imgError ? (
+    <div className={`overflow-hidden ${className}`} style={{ width, height: 'auto' }}>
+      <img
+        src={inkWashImg}
+        alt="Vệt Mực Thủy Mặc"
+        className="w-full h-auto object-contain max-h-12 opacity-85"
+        onError={() => setImgError(true)}
+      />
+    </div>
+  ) : (
     <svg
       width={width}
       height="36"
@@ -145,7 +158,18 @@ export const InkBloom: React.FC<{ className?: string; size?: number }> = ({
   className = '',
   size = 80,
 }) => {
-  return (
+  const [imgError, setImgError] = React.useState(false);
+
+  return !imgError ? (
+    <div className={`inline-block ${className}`} style={{ width: size, height: size }}>
+      <img
+        src={inkBloomImg}
+        alt="Điểm Mực Thủy Mặc"
+        className="w-full h-full object-contain opacity-75"
+        onError={() => setImgError(true)}
+      />
+    </div>
+  ) : (
     <svg
       width={size}
       height={size}

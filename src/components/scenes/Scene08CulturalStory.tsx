@@ -156,9 +156,9 @@ export const Scene08CulturalStory: React.FC<Scene08CulturalStoryProps> = ({
           </div>
 
           {/* Visual box: Perched crane illustration with label */}
-          <div className="bg-[#EDE5D8]/60 border border-[#DFD5C2] rounded-xl p-4 flex flex-col items-center justify-center min-h-[96px]">
-            <CranePerched size={70} />
-            <span className="text-[10px] font-mono tracking-widest text-[#55756C] uppercase mt-1">
+          <div className="bg-[#EDE5D8]/60 border border-[#DFD5C2] rounded-xl p-4 flex flex-col items-center justify-center min-h-[120px]">
+            <CranePerched size={110} />
+            <span className="text-[10px] font-mono tracking-widest text-[#55756C] uppercase mt-2">
               {CULTURAL_STORY.sections[1].visualLabel}
             </span>
           </div>

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CultureGuardPoint } from '../../types';
+import garmentWashImg from './images/garment-wash.png';
 
 interface NguThanGarmentProps {
   className?: string;
@@ -9,6 +10,7 @@ interface NguThanGarmentProps {
   showGuardPoints?: boolean;
   size?: number;
   garmentStyle?: 'ngu-than' | 'giao-linh' | 'ao-tac';
+  useWashImage?: boolean;
 }
 
 export const NguThanGarment: React.FC<NguThanGarmentProps> = ({
@@ -19,11 +21,29 @@ export const NguThanGarment: React.FC<NguThanGarmentProps> = ({
   showGuardPoints = false,
   size = 460,
   garmentStyle = 'ngu-than',
+  useWashImage = false,
 }) => {
+  const [imgError, setImgError] = useState(false);
   const primaryColor = paletteColors[1] || '#1D5347';
   const deepColor = paletteColors[0] || '#0A3830';
   const lightColor = paletteColors[2] || '#7CAE9B';
   const softColor = paletteColors[3] || '#D0E6C5';
+
+  if (useWashImage && !imgError) {
+    return (
+      <div
+        className={`relative select-none flex items-center justify-center ${className}`}
+        style={{ width: size, height: 'auto' }}
+      >
+        <img
+          src={garmentWashImg}
+          alt="Áo Ngũ Thân Màu Nước"
+          className="w-full h-auto object-contain drop-shadow-lg max-h-[580px]"
+          onError={() => setImgError(true)}
+        />
+      </div>
+    );
+  }
 
   return (
     <div

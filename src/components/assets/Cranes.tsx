@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import cranePerchedImg from './images/crane-perched-v2.png';
+import craneDetailImg from './images/crane-detail.png';
 
 interface CraneProps {
   className?: string;
@@ -139,61 +141,89 @@ export const CraneFlying: React.FC<CraneProps> = ({
   );
 };
 
-export const CranePerched: React.FC<CraneProps> = ({ className = '', size = 140 }) => (
-  <div className={className}>
-    <svg
-      width={size}
-      height={size * 1.3}
-      viewBox="0 0 120 160"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {/* Stone / Roof perch mount */}
-      <path
-        d="M20 145C35 140 65 138 95 142C105 144 110 150 105 155C80 158 35 158 15 152C12 148 15 145 20 145Z"
-        fill="#3A4A43"
-        fillOpacity="0.4"
+export const CraneDetail: React.FC<{ className?: string; size?: number }> = ({
+  className = '',
+  size = 180,
+}) => {
+  return (
+    <div className={`relative inline-block ${className}`} style={{ width: size, height: size }}>
+      <img
+        src={craneDetailImg}
+        alt="Chi Tiết Thủy Mặc Hạc Tiên"
+        className="w-full h-full object-contain drop-shadow-sm rounded-lg"
       />
+    </div>
+  );
+};
 
-      {/* Slender Legs */}
-      <path d="M54 105L52 144M64 105L66 144" stroke="#4A3E34" strokeWidth="2" strokeLinecap="round" />
-      <path d="M52 144L47 148M66 144L72 148" stroke="#4A3E34" strokeWidth="1.8" strokeLinecap="round" />
+export const CranePerched: React.FC<CraneProps> = ({ className = '', size = 140 }) => {
+  const [imgError, setImgError] = React.useState(false);
 
-      {/* Perched Body */}
-      <path
-        d="M48 60C45 75 48 95 60 108C70 105 78 95 78 80C78 68 72 55 60 48C52 52 49 56 48 60Z"
-        fill="#FFFFFF"
-        stroke="#D5CDC2"
-        strokeWidth="0.8"
-      />
+  return (
+    <div className={`relative inline-block ${className}`} style={{ width: size, height: 'auto' }}>
+      {!imgError ? (
+        <img
+          src={cranePerchedImg}
+          alt="Hạc Đậu"
+          className="w-full h-auto object-contain drop-shadow-sm"
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <svg
+          width={size}
+          height={size * 1.3}
+          viewBox="0 0 120 160"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Stone / Roof perch mount */}
+          <path
+            d="M20 145C35 140 65 138 95 142C105 144 110 150 105 155C80 158 35 158 15 152C12 148 15 145 20 145Z"
+            fill="#3A4A43"
+            fillOpacity="0.4"
+          />
 
-      {/* Folded Wing with deep ink green and jade tips */}
-      <path
-        d="M52 64C50 78 54 94 65 106C68 100 70 88 68 76C66 65 60 58 52 64Z"
-        fill="#2A6B5B"
-        fillOpacity="0.3"
-      />
-      <path
-        d="M56 72C55 86 60 102 70 114C72 108 72 95 68 84C65 74 61 70 56 72Z"
-        fill="#0E382F"
-      />
+          {/* Slender Legs */}
+          <path d="M54 105L52 144M64 105L66 144" stroke="#4A3E34" strokeWidth="2" strokeLinecap="round" />
+          <path d="M52 144L47 148M66 144L72 148" stroke="#4A3E34" strokeWidth="1.8" strokeLinecap="round" />
 
-      {/* Elegant S-curved Neck */}
-      <path
-        d="M60 48C62 38 66 28 62 18C60 13 55 10 52 14C50 16 52 22 55 30C57 38 54 44 50 50"
-        fill="#FFFFFF"
-      />
-      <path
-        d="M58 46C60 38 63 28 60 20C58 16 54 13 52 15"
-        stroke="#1F2421"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
+          {/* Perched Body */}
+          <path
+            d="M48 60C45 75 48 95 60 108C70 105 78 95 78 80C78 68 72 55 60 48C52 52 49 56 48 60Z"
+            fill="#FFFFFF"
+            stroke="#D5CDC2"
+            strokeWidth="0.8"
+          />
 
-      {/* Head, Beak & Red Crown */}
-      <ellipse cx="50" cy="11" rx="2.5" ry="1.6" fill="#C23B22" />
-      <circle cx="51" cy="13" r="0.7" fill="#1F2421" />
-      <path d="M49 14L38 17" stroke="#4A3E34" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  </div>
-);
+          {/* Folded Wing with deep ink green and jade tips */}
+          <path
+            d="M52 64C50 78 54 94 65 106C68 100 70 88 68 76C66 65 60 58 52 64Z"
+            fill="#2A6B5B"
+            fillOpacity="0.3"
+          />
+          <path
+            d="M56 72C55 86 60 102 70 114C72 108 72 95 68 84C65 74 61 70 56 72Z"
+            fill="#0E382F"
+          />
+
+          {/* Elegant S-curved Neck */}
+          <path
+            d="M60 48C62 38 66 28 62 18C60 13 55 10 52 14C50 16 52 22 55 30C57 38 54 44 50 50"
+            fill="#FFFFFF"
+          />
+          <path
+            d="M58 46C60 38 63 28 60 20C58 16 54 13 52 15"
+            stroke="#1F2421"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+
+          {/* Head, Beak & Red Crown */}
+          <ellipse cx="50" cy="11" rx="2.5" ry="1.6" fill="#C23B22" />
+          <circle cx="51" cy="13" r="0.7" fill="#1F2421" />
+          <path d="M49 14L38 17" stroke="#4A3E34" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      )}
+    </div>
+  );
+};

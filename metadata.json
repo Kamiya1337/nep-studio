@@ -2,5 +2,7 @@
   "name": "NẾP - Định hình Phong vị Việt phục",
   "description": "Nền tảng định hình và phối sắc Việt phục đương đại chuẩn điển chế truyền thống.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

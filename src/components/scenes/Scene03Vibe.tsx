@@ -131,9 +131,10 @@ export const Scene03Vibe: React.FC<Scene03VibeProps> = ({
             className="relative z-10"
           >
             <NguThanGarment
-              size={360}
+              size={380}
               paletteColors={['#0A3830', '#1D5347', '#7CAE9B', '#D0E6C5']}
               showGuardPoints={false}
+              useWashImage={true}
             />
           </motion.div>
 
